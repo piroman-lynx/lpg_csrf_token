@@ -7,13 +7,19 @@
  * Защита не только от нелегальных действий на сайте (например спама), но и от просмотра личной информации пользователя.
    При правильной обработке возвращаемого значения функции lpg_csrf_token можно обрубать любой запрос без токена
 
+Поддержка браузеров (проверено):
+ * Firefox 3.6+
+ * Opera 9.00+
+ * IE 7+
+ * Google Chrome
+
 Данная библиотека использует:
  * php 5.3+ (возможно и на 5.2 будет работать)
  * jquery 1.6 +
 
 Как подключить библиотеку:
 
- git clone https://piroman-lynx@github.com/piroman-lynx/lpg_csrf_token.git lpg_csrf_token
+ git clone git://github.com/piroman-lynx/lpg_csrf_token.git
 
 После вам нужно подключить файл lpg_csrf_token/bootstrap.php в Ваш основной входной файл (обычно это index.php).
 
