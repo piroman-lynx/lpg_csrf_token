@@ -2,6 +2,10 @@
 
 
 function lpg_csrf_token($token_key, $loading_text = "Loading...") {
+    if (defined(TOKEN_DISABLED)){
+	return true;
+    }
+
     $headers = lpg_getallheaders();
     $source = null;
     $method = 'classic';
