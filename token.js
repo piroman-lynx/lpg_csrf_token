@@ -9,11 +9,6 @@ function csrf_token_init(){
         	return param_vars[1];
     	    }
 	}
-	if (console){
-    	    console.log('can\'t find token!');
-	}else{
-    	    alert('can\'t find token!');
-	}
 	return null;
     }
 
@@ -31,6 +26,12 @@ function csrf_token_init(){
 
     $(document).ready(function(){
 	$('body').ajaxSuccess(function(){
+	    tok = get_token();
+	    if (tok){
+		token = tok;
+		setup();
+		return true;
+	    }
 	    cookies=document.cookie.split(';');
 	    $.each(cookies, function(k,v){
 		if (/XCSRFTOKEN/.test(v)){

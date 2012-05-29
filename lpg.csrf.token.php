@@ -17,11 +17,11 @@ function lpg_csrf_token($token_key, $loading_text = "Loading...", $expire_time= 
     $method = 'classic';
 
     if (isset($headers['X-CSRF-TOKEN'])) {
-        $token = $headers['X-CSRF-TOKEN'];
+        $token = trim($headers['X-CSRF-TOKEN']);
         $source = 'header';
     } else
     if (isset($_GET['csrf_token'])) {
-        $token = $_GET['csrf_token'];
+        $token = trim($_GET['csrf_token']);
         $source = 'get';
     } else {
         $token = '';
